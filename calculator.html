@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 25%;
+            /* padding: 5%; */
+            background-color: darkslategray;
+            box-shadow: 5px 5px 5px black;
+           margin-left: 30%;
+           margin-top: 3%;
+           border-radius: 6px;
+            /* display: flex; */
+            /* align-items: start; */
+        }
+        /* .row {
+            width: 100%;
+            margin-top: %;
+        } */
+        input {
+            width: 79%;
+            padding: 4%;
+            margin-left: 5%;
+            margin-top: 3%;
+            background-color: rgb(211, 198, 198);
+            color: #000;
+            font-size: 1.2em;
+            border: 3px inset rgb(55, 54, 54);
+            outline: 1px thistle ;
+            box-shadow: 3px 3px 5px black;
+
+        }
+        .key {
+            width: 90%;
+            padding: 2%;
+            margin-top: 2%;
+            margin-left: 2%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            justify-content: space-evenly;
+            
+            
+        }
+        button {
+            width: 24%;
+            padding: 8%;
+            margin-top: 1%;
+            font-size:1.5em;
+            margin-left: 1%;
+            justify-content: space-evenly;
+            box-shadow: 3px 3px 5px black;
+
+        } 
+        /* .zero {
+           padding-left: 2%;
+        }  */
+        #AC {
+            background-color: red;
+        }
+        #bg {
+            background-color: darkgrey;
+           
+        }
+        #zero {
+            width: 74%;
+            /* margin-left: -24%; */
+        }
+       .del {
+        
+        background-color: darkgrey;
+       }
+        
+    </style>
+
+    
+</head>
+<body>
+<div class="box">
+    <!-- <div class="row"> -->
+    <input type="text" id="result">
+     <!-- </div> -->
+
+     <div class="key">
+         
+         <button id="AC" onClick="clrdata()" value="+">C</button>
+         <button class="del" onClick="del()">DEL</button>
+         
+    <button id="bg" onClick="showResult(this)" value="+">+</button>
+   
+    <button id="bg" onClick="showResult(this)" value="-">-</button>
+
+    <button onClick="showResult(this)" value="9">9</button>
+    <button onClick="showResult(this)" value="8">8</button>
+    <button onClick="showResult(this)" value="7">7</button>
+
+    <button id="bg" onClick="showResult(this)" value="*">*</button>
+
+    <button onClick="showResult(this)" value="4">4</button>
+    <button onClick="showResult(this)" value="5">5</button>
+    <button onClick="showResult(this)" value="6">6</button>
+   
+    <button id="bg" onClick="showResult(this)" value="/">/</button>
+    
+    <button onClick="showResult(this)" value="1">1</button>
+    <button onClick="showResult(this)" value="2">2</button>
+    <button onClick="showResult(this)" value="3">3</button>
+    
+   
+    
+    <button id="bg" onClick="showResult(this)" value=".">.</button>
+
+
+
+
+     
+
+    
+    
+   
+    <button id="zero" onClick="showResult(this)" value="0">0</button>
+    <button id="bg" class="equal" onClick="result()" value="+">=</button>
+    
+   
+    <!-- <button id="del" onClick="del()">DEL</button> -->
+    
+
+
+    </div>
+ </div>   
+</body>
+</html>
+<script>
+    //   var output = document.getElementById('result') ;
+    function showResult(e) {
+        document.getElementById('result').value += e.value
+    }
+
+    function result() {
+       var str = document.getElementById('result').value ;
+       document.getElementById('result').value = eval(str)
+    }
+
+    function clrdata() {
+        document.getElementById('result').value = " ";
+    }
+
+    function del() {
+      document.getElementById('result').value =document.getElementById('result').value.slice(0,-1);
+        // output.value = output.value.slice(0,-1)
+    }
+</script>
